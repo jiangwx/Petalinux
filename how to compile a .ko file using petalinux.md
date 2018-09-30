@@ -128,7 +128,7 @@ $ find . -name cp210.ko
 ### 编译用户自己的ko文件
  ```sh
 $ petalinux-create -t modules -n pwm
-$ vim project-spec/meta-user/recipes-modules/pwm/files/pwm.c //将pwm.c的内容替换成自己的
+$ vim project-spec/meta-user/recipes-modules/pwm/files/pwm.c //将pwm.c的内容替换成自己的，可以参照jiangwx/zynqbook/pwm.c
 $ petalinux-create -c rootfs //检查一下modules项有没有勾选pwm，如果没有勾选就选上
  ```
 
