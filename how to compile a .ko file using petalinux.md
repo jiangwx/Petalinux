@@ -51,7 +51,7 @@ $ cd PYNQ/
 $ petalinux-config --get-hw-description <path to hdf> //导入hdf文件
 $ petalinux-config -c kernel //配置内核
 ```
-此时会弹出一个图形界面方便用户配置内核，由于内容过多，我们可以先搜索要编译的cp210x的位置按下'/'键进入搜索界面，输入cp210x此处还可以看到cp210x的依赖。
+此时会弹出一个图形界面方便用户配置内核，由于内容过多，我们可以先搜索要编译的cp210x的位置。按下'/'键进入搜索界面，输入cp210x此处还可以看到cp210x的依赖。
 ![](images/0.PNG)
 
 Device Drivers->USB support->USB Serial Converter support配置为module模式如下图所示
