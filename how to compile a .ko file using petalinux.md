@@ -2,6 +2,7 @@
 
 .ko文件是kernel object文件(内核模块),该文件的意义就是把内核的一些功能移动到内核外边,需要的时候插入内核,不需要时卸载。
 
+## 传统方式编译ko文件
 编译ko时需要linux的内核源码,以下面最简单的驱动为例,介绍通用的编译内核驱动的方法:
 ### 编写hello.c文件
 ```sh
@@ -118,5 +119,23 @@ CONFIG_USB_SERIAL_CP210X=m
 # CONFIG_USB_SERIAL_UPD78F0730 is not set
 # CONFIG_USB_SERIAL_DEBUG is not set
 ```
-
+然后编译工程
+```sh
+petalinux-build
+```
+编译结束后我们可以通过find指令找到ko文件
+```sh
+find . -name cp210.ko
+```
+### 编译用户自己的ko文件
+ ```sh
+ petalinux-create -t modules -n pwm
+ vim project-spec/meta-user/recipes-modules/pwm/files/pwm.c //将pwm.c的内容替换成自己的
+ petalinux-create -c rootfs
+ ```
+检查一下modules项有没有勾选pwm,如果没有勾选就选上
+然后编译工程
+```sh
+petalinux-build
+```
 
