@@ -1,9 +1,9 @@
 # 如何使用Petalinux编译ko文件
 
-.ko文件是kernel object文件(内核模块),该文件的意义就是把内核的一些功能移动到内核外边,需要的时候插入内核,不需要时卸载。
+.ko文件是kernel object文件(内核模块)，该文件的意义就是把内核的一些功能移动到内核外边，需要的时候插入内核，不需要时卸载。
 
 ## 传统方式编译ko文件
-编译ko时需要linux的内核源码,以下面最简单的驱动为例,介绍通用的编译内核驱动的方法:
+编译ko时需要linux的内核源码，以下面最简单的驱动为例，介绍通用的编译内核驱动的方法:
 ### 编写hello.c文件
 ```sh
 #include <linux/init.h>
@@ -12,13 +12,13 @@ MODULE_LICENSE("Dual BSD/GPL");
 
 static int hello_init(void)
 {
-  printk(KERN_ERR"Hello,world.\n");
+  printk(KERN_ERR"Hello，world.\n");
   return 0x0;
 }
 
 static void hello_exit(void)
 {
-  printk(KERN_ERR"Hello,exit.\n");
+  printk(KERN_ERR"Hello，exit.\n");
   return;
 }
 
@@ -39,19 +39,19 @@ clean:
 
 ### 编译ko文件 
 ```sh 
-make 
+$ make 
 ```
 ## 使用Petalinux编译ko文件
-上面的流程比较繁琐，既要下载linux源代码，又要编写makefile，使用Petalinux,我们可以非常方便地编译ko文件。
-使用Petalinux编译ko文件大体可以分成两种,一种是内核源码中的部分驱动以module模式编译，同时也可以用来
-编译用户自己的驱动程序。下面以为PYNQ-Z2板卡编译cp210x和PWM驱动为例,介绍两种编译模式。
+上面的流程比较繁琐，既要下载linux源代码，又要编写makefile，使用Petalinux，我们可以非常方便地编译ko文件。
+使用Petalinux编译ko文件大体可以分成两种，一种是内核源码中的部分驱动以module模式编译，同时也可以用来
+编译用户自己的驱动程序。下面以为PYNQ-Z2板卡编译cp210x和PWM驱动为例，介绍两种编译模式。
 
 ### 以module模式编译内核源码
 ```sh
-petalinux-create --type project --template zynq --name PYNQ//新建一个工程
-cd PYNQ/
-petalinux-config --get-hw-description <path to hdf>//导入hdf文件
-petalinux-config -c kernel//配置内核
+$ petalinux-create --type project --template zynq --name PYNQ//新建一个工程
+$ cd PYNQ/
+$ petalinux-config --get-hw-description <path to hdf>//导入hdf文件
+$ petalinux-config -c kernel//配置内核
 ```
 此时会弹出一个图形界面方便用户配置内核，由于内容过多，我们可以先搜索要编译的cp210x的位置
 按下'/'键进入搜索界面，输入cp210x
@@ -121,21 +121,21 @@ CONFIG_USB_SERIAL_CP210X=m
 ```
 然后编译工程
 ```sh
-petalinux-build
+$ petalinux-build
 ```
 编译结束后我们可以通过find指令找到ko文件
 ```sh
-find . -name cp210.ko
+$ find . -name cp210.ko
 ```
 ### 编译用户自己的ko文件
  ```sh
- petalinux-create -t modules -n pwm
- vim project-spec/meta-user/recipes-modules/pwm/files/pwm.c //将pwm.c的内容替换成自己的
- petalinux-create -c rootfs
+$ petalinux-create -t modules -n pwm
+$ vim project-spec/meta-user/recipes-modules/pwm/files/pwm.c //将pwm.c的内容替换成自己的
+$ petalinux-create -c rootfs //检查一下modules项有没有勾选pwm，如果没有勾选就选上
  ```
-检查一下modules项有没有勾选pwm,如果没有勾选就选上
+
 然后编译工程
 ```sh
-petalinux-build
+$ petalinux-build
 ```
-
+编译结束后我们可以通过find指令找到pwm.ko文件
