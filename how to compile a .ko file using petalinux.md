@@ -52,12 +52,14 @@ $ petalinux-config --get-hw-description <path to hdf> //导入hdf文件
 $ petalinux-config -c kernel //配置内核
 ```
 此时会弹出一个图形界面方便用户配置内核，由于内容过多，我们可以先搜索要编译的cp210x的位置按下'/'键进入搜索界面，输入cp210x此处还可以看到cp210x的依赖。
-![](images/0.png)
-Device Drivers->USB support->
-按空格勾选USB Serial Converter support并配置为module模式如下图所示
-![](images/1.png)
-然后进入该选项，勾选USB CP210x family of UART Bridge Controllers并配置为module模式如下图所示
-![](images/2.png)
+![](images/0.PNG)
+
+Device Drivers->USB support->USB Serial Converter support配置为module模式如下图所示
+![](images/1.PNG)
+
+然后进入该选项，勾选USB CP210x family of UART Bridge Controllers配置为module模式如下图所示
+![](images/2.PNG)
+
 保存后退出。
 我们在project-spec/meta-user/recipes-kernel/linux/linux-xlnx/user_xxx.cfg中看到
 ```sh
