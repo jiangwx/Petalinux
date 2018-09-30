@@ -43,15 +43,15 @@ $ make
 ```
 ## 使用Petalinux编译ko文件
 上面的流程比较繁琐，既要下载linux源代码，又要编写makefile，使用Petalinux，我们可以非常方便地编译ko文件。
-使用Petalinux编译ko文件大体可以分成两种，一种是内核源码中的部分驱动以module模式编译，同时也可以用来
+使用Petalinux既可以将内核源码中的部分驱动以module模式编译，也可以用来
 编译用户自己的驱动程序。下面以为PYNQ-Z2板卡编译cp210x和PWM驱动为例，介绍两种编译模式。
 
 ### 以module模式编译内核源码
 ```sh
-$ petalinux-create --type project --template zynq --name PYNQ//新建一个工程
+$ petalinux-create --type project --template zynq --name PYNQ //新建一个petalinux工程
 $ cd PYNQ/
-$ petalinux-config --get-hw-description <path to hdf>//导入hdf文件
-$ petalinux-config -c kernel//配置内核
+$ petalinux-config --get-hw-description <path to hdf> //导入hdf文件
+$ petalinux-config -c kernel //配置内核
 ```
 此时会弹出一个图形界面方便用户配置内核，由于内容过多，我们可以先搜索要编译的cp210x的位置
 按下'/'键进入搜索界面，输入cp210x
@@ -138,4 +138,6 @@ $ petalinux-create -c rootfs //检查一下modules项有没有勾选pwm，如果
 ```sh
 $ petalinux-build
 ```
-编译结束后我们可以通过find指令找到pwm.ko文件
+同样，编译结束后我们可以通过find指令找到pwm.ko文件
+```sh
+$ find . -name pwm.ko
