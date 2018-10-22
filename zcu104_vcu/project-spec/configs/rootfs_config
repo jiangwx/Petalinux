@@ -3859,7 +3859,7 @@ CONFIG_bridge-utils=y
 #
 # power management 
 #
-CONFIG_hellopm=y
+# CONFIG_hellopm is not set
 
 #
 # utils 
@@ -3883,15 +3883,15 @@ CONFIG_hellopm=y
 #
 # libdrm 
 #
-# CONFIG_libdrm is not set
-# CONFIG_libdrm-tests is not set
+CONFIG_libdrm=y
+CONFIG_libdrm-tests=y
 # CONFIG_libdrm-drivers is not set
 # CONFIG_libdrm-amdgpu is not set
 # CONFIG_libdrm-nouveau is not set
 # CONFIG_libdrm-dev is not set
 # CONFIG_libdrm-freedreno is not set
 # CONFIG_libdrm-radeon is not set
-# CONFIG_libdrm-kms is not set
+CONFIG_libdrm-kms=y
 # CONFIG_libdrm-dbg is not set
 # CONFIG_libdrm-omap is not set
 
@@ -4347,21 +4347,21 @@ CONFIG_packagegroup-petalinux-gstreamer-dev=y
 #
 # packagegroup-petalinux-utils 
 #
-# CONFIG_packagegroup-petalinux-utils is not set
+CONFIG_packagegroup-petalinux-utils=y
 # CONFIG_packagegroup-petalinux-utils-dbg is not set
-# CONFIG_packagegroup-petalinux-utils-dev is not set
+CONFIG_packagegroup-petalinux-utils-dev=y
 
 #
 # packagegroup-petalinux-v4lutils 
 #
-# CONFIG_packagegroup-petalinux-v4lutils is not set
+CONFIG_packagegroup-petalinux-v4lutils=y
 # CONFIG_packagegroup-petalinux-v4lutils-dbg is not set
 # CONFIG_packagegroup-petalinux-v4lutils-dev is not set
 
 #
 # packagegroup-petalinux-x11 
 #
-# CONFIG_packagegroup-petalinux-x11 is not set
+CONFIG_packagegroup-petalinux-x11=y
 # CONFIG_packagegroup-petalinux-x11-dev is not set
 # CONFIG_packagegroup-petalinux-x11-dbg is not set
 
@@ -4375,7 +4375,7 @@ CONFIG_packagegroup-petalinux-gstreamer-dev=y
 #
 # packagegroup-petalinux-xfce 
 #
-# CONFIG_packagegroup-petalinux-xfce is not set
+CONFIG_packagegroup-petalinux-xfce=y
 # CONFIG_packagegroup-petalinux-xfce-dbg is not set
 # CONFIG_packagegroup-petalinux-xfce-dev is not set
 
@@ -4388,6 +4388,7 @@ CONFIG_packagegroup-petalinux-gstreamer-dev=y
 #
 # user packages 
 #
+CONFIG_gstreamer-vcu-examples=y
 
 #
 # PetaLinux RootFS Settings

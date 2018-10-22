@@ -1,12 +1,30 @@
+
 #include <configs/platform-auto.h>
-#define CONFIG_SYS_BOOTM_LEN 0xF000000
+
+#define CONFIG_SYS_I2C_MAX_HOPS		1
+#define CONFIG_SYS_NUM_I2C_BUSES	9
+#define CONFIG_SYS_I2C_BUSES    { \
+				{0, {I2C_NULL_HOP} }, \
+				{0, {{I2C_MUX_PCA9548, 0x74, 0} } }, \
+				{0, {{I2C_MUX_PCA9548, 0x74, 1} } }, \
+				{0, {{I2C_MUX_PCA9548, 0x74, 2} } }, \
+				{0, {{I2C_MUX_PCA9548, 0x74, 3} } }, \
+				{0, {{I2C_MUX_PCA9548, 0x74, 4} } }, \
+				{0, {{I2C_MUX_PCA9548, 0x74, 5} } }, \
+				{0, {{I2C_MUX_PCA9548, 0x74, 6} } }, \
+				{0, {{I2C_MUX_PCA9548, 0x74, 7} } }, \
+				}
+
+#define CONFIG_PCA953X
+
+#define CONFIG_SYS_I2C_EEPROM_ADDR_LEN  1
 
 #define DFU_ALT_INFO_RAM \
-                "dfu_ram_info=" \
-        "setenv dfu_alt_info " \
-        "image.ub ram $netstart 0x1e00000\0" \
-        "dfu_ram=run dfu_ram_info && dfu 0 ram 0\0" \
-        "thor_ram=run dfu_ram_info && thordown 0 ram 0\0"
+		"dfu_ram_info=" \
+	"setenv dfu_alt_info " \
+	"image.ub ram $netstart 0x1e00000\0" \
+	"dfu_ram=run dfu_ram_info && dfu 0 ram 0\0" \
+	"thor_ram=run dfu_ram_info && thordown 0 ram 0\0"
 
 #define DFU_ALT_INFO_MMC \
         "dfu_mmc_info=" \
@@ -15,19 +33,4 @@
         "dfu_mmc=run dfu_mmc_info && dfu 0 mmc 0\0" \
         "thor_mmc=run dfu_mmc_info && thordown 0 mmc 0\0"
 
-/*Required for uartless designs */
-#ifndef CONFIG_BAUDRATE
-#define CONFIG_BAUDRATE 115200
-#ifdef CONFIG_DEBUG_UART
-#undef CONFIG_DEBUG_UART
-#endif
-#endif
-
-/*Define CONFIG_ZYNQMP_EEPROM here and its necessaries in u-boot menuconfig if you had EEPROM memory. */
-#ifdef CONFIG_ZYNQMP_EEPROM
-#define CONFIG_SYS_I2C_EEPROM_ADDR_LEN  1
-#define CONFIG_CMD_EEPROM
-#define CONFIG_ZYNQ_EEPROM_BUS          5
-#define CONFIG_ZYNQ_GEM_EEPROM_ADDR     0x54
-#define CONFIG_ZYNQ_GEM_I2C_MAC_OFFSET  0x20
-#endif
+#define CONFIG_SYS_BOOTM_LEN 0xF000000
