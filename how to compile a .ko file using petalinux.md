@@ -5,7 +5,7 @@
 ## 传统方式编译ko文件
 编译ko时需要linux的内核源码，以下面最简单的驱动为例，介绍通用的编译内核驱动的方法:
 ### 编写hello.c文件
-```sh
+```c
 #include <linux/init.h>
 #include <linux/module.h>
 MODULE_LICENSE("Dual BSD/GPL");
