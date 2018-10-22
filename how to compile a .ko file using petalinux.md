@@ -42,9 +42,7 @@ clean:
 $ make 
 ```
 ## 使用Petalinux编译ko文件
-上面的流程比较繁琐，既要下载linux源代码，又要编写makefile，使用Petalinux，我们可以非常方便地编译ko文件。
-使用Petalinux既可以将内核源码中的部分驱动以module模式编译，也可以用来
-编译用户自己的驱动程序。下面以为PYNQ-Z2板卡编译cp210x和PWM驱动为例，介绍两种编译模式。
+上面的流程比较繁琐，既要下载linux源代码，又要编写makefile，使用Petalinux，我们可以非常方便地编译ko文件。使用Petalinux既可以将内核源码中的部分驱动以module模式编译，也可以用来编译用户自己的驱动程序。下面以为PYNQ-Z2板卡编译cp210x和PWM驱动为例，介绍两种编译模式。
 
 ### 以module模式编译内核源码
 ```sh
@@ -53,14 +51,14 @@ $ cd PYNQ/
 $ petalinux-config --get-hw-description <path to hdf> //导入hdf文件
 $ petalinux-config -c kernel //配置内核
 ```
-此时会弹出一个图形界面方便用户配置内核，由于内容过多，我们可以先搜索要编译的cp210x的位置
-按下'/'键进入搜索界面，输入cp210x
-此处还可以看到cp210x的依赖。
+此时会弹出一个图形界面方便用户配置内核，由于内容过多，我们可以先搜索要编译的cp210x的位置。按下'/'键进入搜索界面，输入cp210x此处还可以看到cp210x的依赖。
+![](images/0.PNG)
 
-Device Drivers->USB support->
-按空格勾选USB Serial Converter support并配置为module模式如下图所示
+Device Drivers->USB support->USB Serial Converter support配置为module模式如下图所示
+![](images/1.PNG)
 
-然后进入该选项，勾选USB CP210x family of UART Bridge Controllers并配置为module模式如下图所示
+然后进入该选项，勾选USB CP210x family of UART Bridge Controllers配置为module模式如下图所示
+![](images/2.PNG)
 
 保存后退出。
 我们在project-spec/meta-user/recipes-kernel/linux/linux-xlnx/user_xxx.cfg中看到
@@ -130,7 +128,7 @@ $ find . -name cp210.ko
 ### 编译用户自己的ko文件
  ```sh
 $ petalinux-create -t modules -n pwm
-$ vim project-spec/meta-user/recipes-modules/pwm/files/pwm.c //将pwm.c的内容替换成自己的
+$ vim project-spec/meta-user/recipes-modules/pwm/files/pwm.c //将pwm.c的内容替换成自己的，可以参照jiangwx/zynqbook/pwm.c
 $ petalinux-create -c rootfs //检查一下modules项有没有勾选pwm，如果没有勾选就选上
  ```
 
