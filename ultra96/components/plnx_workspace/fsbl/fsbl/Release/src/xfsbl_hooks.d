@@ -15,7 +15,7 @@ src/xfsbl_hooks.o src/xfsbl_hooks.o: ../src/xfsbl_hooks.c \
  ../src/xfsbl_debug.h ../../fsbl_bsp/psu_cortexa53_0/include/xil_printf.h \
  ../src/xfsbl_error.h ../src/xfsbl_hooks.h ../src/xfsbl_misc.h \
  ../../fsbl_bsp/psu_cortexa53_0/include/xil_exception.h \
- /disk/users/fpga/jiangwx/plnx2018.2/xilinx-ultra96-reva-2018.2/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.h
+ /disk/users/fpga/jiangwx/plnx2018.2/ultra96/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.h
 
 ../src/xfsbl_hw.h:
 
@@ -59,4 +59,4 @@ src/xfsbl_hooks.o src/xfsbl_hooks.o: ../src/xfsbl_hooks.c \
 
 ../../fsbl_bsp/psu_cortexa53_0/include/xil_exception.h:
 
-/disk/users/fpga/jiangwx/plnx2018.2/xilinx-ultra96-reva-2018.2/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.h:
+/disk/users/fpga/jiangwx/plnx2018.2/ultra96/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.h:

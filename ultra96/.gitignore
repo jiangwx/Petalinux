@@ -1,7 +1,6 @@
 */*/config.old
 */*/rootfs_config.old
 build/
-hardware/
 images/linux/
 pre-built/linux/
 .petalinux/*
@@ -10,4 +9,4 @@ pre-built/linux/
 *.jou
 *.log
 project-spec/meta-plnx-generated/
-
+/components/plnx_workspace

@@ -1,6 +1,2 @@
 /include/ "system-conf.dtsi"
-/{
-xlnk {
-compatible = "xlnx,xlnk-1.0";
-};
-};
+/include/ "xlnk.dtsi"

@@ -7,7 +7,7 @@ LD_SRCS += \
 ../src/lscript.ld 
 
 C_SRCS += \
-/disk/users/fpga/jiangwx/plnx2018.2/xilinx-ultra96-reva-2018.2/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.c \
+/disk/users/fpga/jiangwx/plnx2018.2/ultra96/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.c \
 ../src/xfsbl_authentication.c \
 ../src/xfsbl_board.c \
 ../src/xfsbl_bs.c \
@@ -84,24 +84,24 @@ C_DEPS += \
 
 
 # Each subdirectory must supply rules for building sources it contributes
-src/psu_init.o: /disk/users/fpga/jiangwx/plnx2018.2/xilinx-ultra96-reva-2018.2/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.c
+src/psu_init.o: /disk/users/fpga/jiangwx/plnx2018.2/ultra96/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM v8 gcc compiler'
-	aarch64-none-elf-gcc -DARMA53_64 -Wall -O2 -I"/disk/users/fpga/jiangwx/plnx2018.2/xilinx-ultra96-reva-2018.2/components/plnx_workspace/fsbl/fsbl_hwproj" -c -fmessage-length=0 -MT"$@" -Os -flto -ffat-lto-objects -I../../fsbl_bsp/psu_cortexa53_0/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	aarch64-none-elf-gcc -DARMA53_64 -Wall -O2 -I"/disk/users/fpga/jiangwx/plnx2018.2/ultra96/components/plnx_workspace/fsbl/fsbl_hwproj" -c -fmessage-length=0 -MT"$@" -Os -flto -ffat-lto-objects -I../../fsbl_bsp/psu_cortexa53_0/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 src/%.o: ../src/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM v8 gcc compiler'
-	aarch64-none-elf-gcc -DARMA53_64 -Wall -O2 -I"/disk/users/fpga/jiangwx/plnx2018.2/xilinx-ultra96-reva-2018.2/components/plnx_workspace/fsbl/fsbl_hwproj" -c -fmessage-length=0 -MT"$@" -Os -flto -ffat-lto-objects -I../../fsbl_bsp/psu_cortexa53_0/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	aarch64-none-elf-gcc -DARMA53_64 -Wall -O2 -I"/disk/users/fpga/jiangwx/plnx2018.2/ultra96/components/plnx_workspace/fsbl/fsbl_hwproj" -c -fmessage-length=0 -MT"$@" -Os -flto -ffat-lto-objects -I../../fsbl_bsp/psu_cortexa53_0/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 src/%.o: ../src/%.S
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM v8 gcc compiler'
-	aarch64-none-elf-gcc -DARMA53_64 -Wall -O2 -I"/disk/users/fpga/jiangwx/plnx2018.2/xilinx-ultra96-reva-2018.2/components/plnx_workspace/fsbl/fsbl_hwproj" -c -fmessage-length=0 -MT"$@" -Os -flto -ffat-lto-objects -I../../fsbl_bsp/psu_cortexa53_0/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	aarch64-none-elf-gcc -DARMA53_64 -Wall -O2 -I"/disk/users/fpga/jiangwx/plnx2018.2/ultra96/components/plnx_workspace/fsbl/fsbl_hwproj" -c -fmessage-length=0 -MT"$@" -Os -flto -ffat-lto-objects -I../../fsbl_bsp/psu_cortexa53_0/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

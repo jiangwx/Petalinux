@@ -741,7 +741,7 @@ CONFIG_openssh-sftp-server=y
 #
 # git 
 #
-# CONFIG_git is not set
+CONFIG_git=y
 # CONFIG_git-bash-completion is not set
 # CONFIG_git-perltools is not set
 # CONFIG_gitweb is not set
@@ -2737,21 +2737,21 @@ CONFIG_udev-extraconf=y
 #
 # openamp-fw-echo-testd 
 #
-# CONFIG_openamp-fw-echo-testd is not set
+CONFIG_openamp-fw-echo-testd=y
 # CONFIG_openamp-fw-echo-testd-dev is not set
 # CONFIG_openamp-fw-echo-testd-dbg is not set
 
 #
 # openamp-fw-mat-muld 
 #
-# CONFIG_openamp-fw-mat-muld is not set
+CONFIG_openamp-fw-mat-muld=y
 # CONFIG_openamp-fw-mat-muld-dev is not set
 # CONFIG_openamp-fw-mat-muld-dbg is not set
 
 #
 # openamp-fw-rpc-demo 
 #
-# CONFIG_openamp-fw-rpc-demo is not set
+CONFIG_openamp-fw-rpc-demo=y
 # CONFIG_openamp-fw-rpc-demo-dbg is not set
 # CONFIG_openamp-fw-rpc-demo-dev is not set
 
@@ -4228,7 +4228,7 @@ CONFIG_hellopm=y
 #
 # packagegroup-petalinux 
 #
-# CONFIG_packagegroup-petalinux is not set
+CONFIG_packagegroup-petalinux=y
 # CONFIG_packagegroup-petalinux-dbg is not set
 # CONFIG_packagegroup-petalinux-dev is not set
 
@@ -4305,7 +4305,7 @@ CONFIG_hellopm=y
 #
 # packagegroup-petalinux-openamp 
 #
-# CONFIG_packagegroup-petalinux-openamp is not set
+CONFIG_packagegroup-petalinux-openamp=y
 # CONFIG_packagegroup-petalinux-openamp-dev is not set
 # CONFIG_packagegroup-petalinux-openamp-dbg is not set
 

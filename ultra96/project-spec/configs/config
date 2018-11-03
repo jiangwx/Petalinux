@@ -136,7 +136,7 @@ CONFIG_SUBSYSTEM_MACHINE_NAME="zcu100-revc"
 # Kernel Bootargs
 #
 # CONFIG_SUBSYSTEM_BOOTARGS_AUTO is not set
-CONFIG_SUBSYSTEM_USER_CMDLINE="earlycon clk_ignore_unused earlyprintk uio_pdrv_genirq.of_id=xlnx,generic-uio root=/dev/mmcblk0p2 rw rootwait cma=1024M"
+CONFIG_SUBSYSTEM_USER_CMDLINE="earlycon clk_ignore_unused earlyprintk root=/dev/mmcblk0p2 rw rootwait cma=1024M"
 
 #
 # ARM Trusted Firmware Compilation Configuration

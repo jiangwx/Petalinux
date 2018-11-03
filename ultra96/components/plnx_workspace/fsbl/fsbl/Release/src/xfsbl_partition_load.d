@@ -35,7 +35,7 @@ src/xfsbl_partition_load.o src/xfsbl_partition_load.o: \
  ../../fsbl_bsp/psu_cortexa53_0/include/xsecure_aes.h \
  ../../fsbl_bsp/psu_cortexa53_0/include/xcsudma.h ../src/xfsbl_bs.h \
  ../src/xfsbl_csu_dma.h \
- /disk/users/fpga/jiangwx/plnx2018.2/xilinx-ultra96-reva-2018.2/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.h \
+ /disk/users/fpga/jiangwx/plnx2018.2/ultra96/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.h \
  ../src/xfsbl_plpartition_valid.h
 
 ../../fsbl_bsp/psu_cortexa53_0/include/xil_cache.h:
@@ -122,6 +122,6 @@ src/xfsbl_partition_load.o src/xfsbl_partition_load.o: \
 
 ../src/xfsbl_csu_dma.h:
 
-/disk/users/fpga/jiangwx/plnx2018.2/xilinx-ultra96-reva-2018.2/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.h:
+/disk/users/fpga/jiangwx/plnx2018.2/ultra96/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.h:
 
 ../src/xfsbl_plpartition_valid.h:

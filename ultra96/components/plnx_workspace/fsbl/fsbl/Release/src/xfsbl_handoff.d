@@ -16,7 +16,7 @@ src/xfsbl_handoff.o src/xfsbl_handoff.o: ../src/xfsbl_handoff.c \
  ../src/xfsbl_error.h ../src/xfsbl_hooks.h ../src/xfsbl_misc.h \
  ../../fsbl_bsp/psu_cortexa53_0/include/xil_exception.h \
  ../../fsbl_bsp/psu_cortexa53_0/include/xil_cache.h \
- /disk/users/fpga/jiangwx/plnx2018.2/xilinx-ultra96-reva-2018.2/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.h \
+ /disk/users/fpga/jiangwx/plnx2018.2/ultra96/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.h \
  ../src/xfsbl_main.h ../src/xfsbl_image_header.h \
  ../src/xfsbl_misc_drivers.h \
  ../../fsbl_bsp/psu_cortexa53_0/include/xplatform_info.h \
@@ -71,7 +71,7 @@ src/xfsbl_handoff.o src/xfsbl_handoff.o: ../src/xfsbl_handoff.c \
 
 ../../fsbl_bsp/psu_cortexa53_0/include/xil_cache.h:
 
-/disk/users/fpga/jiangwx/plnx2018.2/xilinx-ultra96-reva-2018.2/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.h:
+/disk/users/fpga/jiangwx/plnx2018.2/ultra96/components/plnx_workspace/fsbl/fsbl_hwproj/psu_init.h:
 
 ../src/xfsbl_main.h:
 
